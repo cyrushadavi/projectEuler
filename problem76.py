@@ -1,5 +1,7 @@
 __author__ = 'Cyrus'
 
+
+#DP method for solving problem 76
 target = 100
 numbers = xrange(1,target)
 ways = [0 for i in xrange(0,target+1)]

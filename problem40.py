@@ -1,6 +1,6 @@
 __author__ = 'Cyrus'
 
-
+#ugly brute force method
 string = ''
 for i in xrange(1,300000):
     string = string + str(i)

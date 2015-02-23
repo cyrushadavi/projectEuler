@@ -2,6 +2,9 @@ __author__ = 'Cyrus'
 import numpy as np
 import math
 
+
+#efficient prime sieve
+
 def primesfrom2to(n):
     # http://stackoverflow.com/questions/2068372/fastest-way-to-list-all-primes-below-n-in-python/3035188#3035188
     """ Input n>=6, Returns a array of primes, 2 <= p < n """
@@ -14,10 +17,12 @@ def primesfrom2to(n):
             sieve[(k*k+4*k-2*k*(i&1))/3::2*k] = False
     return np.r_[2,3,((3*np.nonzero(sieve)[0]+1)|1)]
 
+#check if prime
 def isPrime(n):
     return n in primesfrom2to(math.sqrt(n))
 
 
+#DP fibonacci finder
 fib = [1,1,2,4,6]
 
 def fibAppend(fib):
@@ -29,3 +34,11 @@ def nthFib(n):
     while len(str(fib[len(fib)-1]))<= n:
         fibAppend(fib)
     return fib[n-1]
+
+
+def sum_digits(n):
+    s = 0
+    while n:
+        s += n % 10
+        n /= 10
+    return s
